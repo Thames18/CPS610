@@ -19,7 +19,7 @@ session_start();
     <p>Input New Information</p>
   </div>
 
-  <a href="addActorDirector.php" class="w3-bar-item w3-button">Add Person</a>
+  <a href="addActorDirector.php" class="w3-bar-item w3-button">Employee Hirring Form</a>
   <a href="addMovie.php" class="w3-bar-item w3-button">Add Movie</a>
   <a href="addMovieActor.php" class="w3-bar-item w3-button">Add Movie Actor</a>
   <a href="addMovieDirector.php" class="w3-bar-item w3-button">Add Movie Director</a>
