@@ -6,7 +6,7 @@
 
 <div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:25%">
   <h3 class="w3-bar-item w3-black">
-      <a href="home.php" class="w3-bar-item w3-black">CS143 Project 1B</a>
+      <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Project 1B</a>
   </h3>
 
   <div class="w3-blue w3-card-2 w3-container">
