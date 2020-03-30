@@ -75,7 +75,7 @@
 
         <br><br>
 
-        <select>
+		<select>
 			<option selected disabled>Manager: </option>
 			<option value="volvo">Employee_Id</option>
 			<option value="saab">First_Name</option>
@@ -84,16 +84,20 @@
           <br><br>
 
 		<select>
-		    <option selected disabled>Job: </option>
-		    <option value="volvo">Job_id</option>
-		    <option value="saab">Job_Title</option>
+		<option selected disabled>Job: </option>
+		  <option value="volvo">Job_id</option>
+		  <option value="saab">Job_Title</option>
+		  <option value="saab">min_salary</option>
+		  <option value="saab">max_salary</option>
+
 		</select>
         <br><br>
 
 		<select>
-		    <option selected disabled>Department:</option>
-		    <option value="volvo">Department_Id</option>
-		    <option value="saab">Department_Name</option>
+		<option selected disabled>Department:</option>
+		  <option value="volvo">Department_Id</option>
+		  <option value="saab">Department_Name</option>
+		  <option value="saab">location_id</option>
 		</select>
   
         <br><br>
