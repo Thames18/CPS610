@@ -75,6 +75,29 @@
 
         <br><br>
 
+        <select>
+			<option selected disabled>Manager: </option>
+			<option value="volvo">Employee_Id</option>
+			<option value="saab">First_Name</option>
+			<option value="opel">Last_Name</option>
+		</select>
+          <br><br>
+
+		<select>
+		    <option selected disabled>Job: </option>
+		    <option value="volvo">Job_id</option>
+		    <option value="saab">Job_Title</option>
+		</select>
+        <br><br>
+
+		<select>
+		    <option selected disabled>Department:</option>
+		    <option value="volvo">Department_Id</option>
+		    <option value="saab">Department_Name</option>
+		</select>
+  
+        <br><br>
+        
         <!-- TODO: complete dropdown/table display for Job_id and job_title -->
         <?php
         require "mysql_connect.php";
