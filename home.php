@@ -13,7 +13,7 @@
     <div class="w3-blue w3-card-2 w3-container">
         <p>Employee Main Menu</p>
     </div>
-    <a href="addActorDirector.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
+    <a href="employee_hiring_form.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
     <a href="****.php" class="w3-bar-item w3-button">Update Employee Records</a>
 
     <!-- Task 2 Related Activities-->
@@ -21,8 +21,8 @@
     <div class="w3-container w3-green w3-card-2">
         <p>Jobs Main Menu</p>
     </div>
-    <a href="actorInfo.php" class="w3-bar-item w3-button">Identify Job Description</a>
-    <a href="movieInfo.php" class="w3-bar-item w3-button">Change Job Description</a>
+    <a href="****.php" class="w3-bar-item w3-button">Identify Job Description</a>
+    <a href="****.php" class="w3-bar-item w3-button">Change Job Description</a>
     <a href="****.php" class="w3-bar-item w3-button">Create New Job</a>
 
     <!-- Task 3 Related Activities-->
@@ -30,7 +30,7 @@
     <div class="w3-container w3-red w3-card-2">
         <p>Departments Main Menu</p>
     </div>
-    <a href="search.php" class="w3-bar-item w3-button">Verify Salary Range</a>
+    <a href="****.php" class="w3-bar-item w3-button">Verify Salary Range</a>
 
 </div>
 </body>
