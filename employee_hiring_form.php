@@ -38,41 +38,33 @@
         <h1>Employee Hiring Form</h1>
     </div>
 
-    <form action="./employee_hiring_form.php" id="add_employee" method="post">
+<form action="insert.php" id="add_employee" method="post">
         <br>
-
         <label>First Name</label>
         <label>
-            <input class="w3-input w3-border w3-round" type="text" name="first_name" form="add_employee">
+            <input class="w3-input w3-border w3-round" type="text" name="first_name" id="first_name">
         </label>
-
         <label>Last Name</label>
         <label>
-            <input class="w3-input w3-border w3-round" type="text" name="first_name" form="add_employee">
+            <input class="w3-input w3-border w3-round" type="text" name="last_name" id="last_name">
         </label>
-
         <label>Email</label>
         <label>
-            <input class="w3-input w3-border w3-round" type="text" name="first_name" form="add_employee">
+            <input class="w3-input w3-border w3-round" type="text" name="email" id="email">
         </label>
-
         <br><br>
-
         <label>Phone</label>
         <label>
-            <input class="w3-input w3-border w3-round" type="text" name="first_name" form="add_employee">
+            <input class="w3-input w3-border w3-round" type="text" name="phone_number" id="phone_number">
         </label>
-
         <label>Hire Date</label>
         <label>
-            <input class="w3-input w3-border w3-round" type="text" name="first_name" form="add_employee">
+            <input class="w3-input w3-border w3-round" type="text" name="hire_date" id="hire_date">
         </label>
-
         <label>Salary</label>
         <label>
-            <input class="w3-input w3-border w3-round" type="text" name="first_name" form="add_employee">
+            <input class="w3-input w3-border w3-round" type="text" name="salary" id="salary">
         </label>
-
         <br><br>
 
 		<select>
