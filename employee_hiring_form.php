@@ -91,13 +91,10 @@
 <!--		  <option value="saab">Department_Name</option>-->
 <!--		  <option value="saab">location_id</option>-->
 <!--		</select>-->
-  
-        <br><br>
         
-    <!-- TODO: complete dropdown/table display for Job_id and job_title -->
-    <!-- Dropdown/table display for Job Table -->
 
-        <label for='job_var'>Select Job Title:</label>
+    <!-- Dropdown/table display for Job Table -->
+        <label for='job_id'>Select Job Title:</label>
         <select name='job_id'>
             <?php
             require "mysql_connect.php";
@@ -108,20 +105,51 @@
                 $rowVal = "{$row['job_id']}  {$row['job_title']}";
                 echo "<option value=$row[job_id]>$rowVal</option>";
             }
+            mysqli_close($connection);
             ?>
         </select>
 
-<!--    --><?php
-//    if(isset($_POST["submit"]))
-//    {
-//        $job_var=$_POST["job_var"];
-//        echo '</br>' . " Selected Value is : " . $job_var;
-//    }
-//    ?>
     <br><br>
-    <button type="submit" name="submit" >Submit</button>
-      <input type="submit" name="submit" value="Hire">
-   <input type="reset" onlclick="myFunction" value="Cancel">
+
+    <!-- Dropdown/table display for Manager Table -->
+    <label for='manager_id'>Select Manager Title:</label>
+    <select name='manager_id'>
+        <?php
+        require "mysql_connect.php";
+        $sql = "select employee_id, first_name, last_name from hr_employees";
+        $result = $connection->query($sql);
+        echo "<option>Select Manager ID...</option>";
+        while ($row = $result->fetch_assoc()){
+            $rowVal = "{$row['employee_id']}  {$row['first_name']}  {$row['last_name']}";
+            echo "<option value=$row[employee_id]>$rowVal</option>";
+        }
+        mysqli_close($connection);
+        ?>
+    </select>
+
+    <br><br>
+
+    <!-- Dropdown/table display for Department Table -->
+    <label for='department_id'>Select Department Title:</label>
+    <select name='department_id'>
+        <?php
+        require "mysql_connect.php";
+        $sql = "select department_id, department_name from hr_departments";
+        $result = $connection->query($sql);
+        echo "<option>Select Department ID...</option>";
+        while ($row = $result->fetch_assoc()){
+            $rowVal = "{$row['department_id']}  {$row['department_name']}";
+            echo "<option value=$row[department_id]>$rowVal</option>";
+        }
+        mysqli_close($connection);
+        ?>
+    </select>
+
+    <br><br>
+
+    <input type="submit" name="submit" value="Hire">
+    <input type="reset" onlclick="myFunction" value="Cancel">
+
     </form>
 
 

@@ -16,11 +16,13 @@ $phone_number = mysqli_real_escape_string($link, $_REQUEST['phone_number']);
 $hire_date = mysqli_real_escape_string($link, $_REQUEST['hire_date']);
 $salary = mysqli_real_escape_string($link, $_REQUEST['salary']);
 $job_id = mysqli_real_escape_string($link, $_REQUEST['job_id']);
+$manager_id = mysqli_real_escape_string($link, $_REQUEST['manager_id']);
+$department_id = mysqli_real_escape_string($link, $_REQUEST['department_id']);
 
 
 // Attempt insert query execution
-$sql = "INSERT INTO hr_employees (first_name, last_name, email, phone_number, hire_date, salary, job_id)
- VALUES ('$first_name', '$last_name', '$email', '$phone_number' , '$hire_date' , '$salary',  '$job_id')";
+$sql = "INSERT INTO hr_employees (first_name, last_name, email, phone_number, hire_date, salary, job_id, manager_id, department_id)
+ VALUES ('$first_name', '$last_name', '$email', '$phone_number' , '$hire_date' , '$salary',  '$job_id',  '$manager_id',  '$department_id')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
