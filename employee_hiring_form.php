@@ -8,6 +8,16 @@
         <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
     </h3>
 
+      <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+  function myFunction() {
+  document.getElementById("myForm").reset();
+}
+  </script>
+    
     <!-- Task 1 Related Activities-->
     <!--TODO: link buttons to appropriate files-->
     <div class="w3-blue w3-card-2 w3-container">
