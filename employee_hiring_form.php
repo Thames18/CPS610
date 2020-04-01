@@ -67,49 +67,61 @@
         </label>
         <br><br>
 
-		<select>
-			<option selected disabled>Manager: </option>
-			<option value="volvo">Employee_Id</option>
-			<option value="saab">First_Name</option>
-			<option value="opel">Last_Name</option>
-		</select>
-          <br><br>
-
-		<select>
-		<option selected disabled>Job: </option>
-		  <option value="volvo">Job_id</option>
-		  <option value="saab">Job_Title</option>
-		  <option value="saab">min_salary</option>
-		  <option value="saab">max_salary</option>
-
-		</select>
-        <br><br>
-
-		<select>
-		<option selected disabled>Department:</option>
-		  <option value="volvo">Department_Id</option>
-		  <option value="saab">Department_Name</option>
-		  <option value="saab">location_id</option>
-		</select>
+<!--		<select>-->
+<!--			<option selected disabled>Manager: </option>-->
+<!--			<option value="volvo">Employee_Id</option>-->
+<!--			<option value="saab">First_Name</option>-->
+<!--			<option value="opel">Last_Name</option>-->
+<!--		</select>-->
+<!--          <br><br>-->
+<!---->
+<!--		<select>-->
+<!--		<option selected disabled>Job: </option>-->
+<!--		  <option value="volvo">Job_id</option>-->
+<!--		  <option value="saab">Job_Title</option>-->
+<!--		  <option value="saab">min_salary</option>-->
+<!--		  <option value="saab">max_salary</option>-->
+<!---->
+<!--		</select>-->
+<!--        <br><br>-->
+<!---->
+<!--		<select>-->
+<!--		<option selected disabled>Department:</option>-->
+<!--		  <option value="volvo">Department_Id</option>-->
+<!--		  <option value="saab">Department_Name</option>-->
+<!--		  <option value="saab">location_id</option>-->
+<!--		</select>-->
   
         <br><br>
         
-        <!-- TODO: complete dropdown/table display for Job_id and job_title -->
-        <?php
-        require "mysql_connect.php";
-        $sql = "select job_id, job_title from hr_jobs";
-        $result = $connection->query($sql);
-        echo "<label for='job_id'>Select Job:</label>";
-        echo "<select id=name name=name class='form-control' style='width:100px;'>";
-        while ($row = $result->fetch_assoc()){
-            $rowVal = "$row[job_id] + ' ' + {$row[job_title]}";
-            echo "<option value=$row[job_id]>$rowVal </option>";
-            //echo "<option value=$row[job_title]>$row[job_title] </option>";
-        }
-        echo "</select>";
-        ?>
+    <!-- TODO: complete dropdown/table display for Job_id and job_title -->
+    <!-- Dropdown/table display for Job Table -->
 
+        <label for='job_var'>Select Job Title:</label>
+        <select name='job_id'>
+            <?php
+            require "mysql_connect.php";
+            $sql = "select job_id, job_title from hr_jobs";
+            $result = $connection->query($sql);
+            echo "<option>Select Job Title...</option>";
+            while ($row = $result->fetch_assoc()){
+                $rowVal = "{$row['job_id']}  {$row['job_title']}";
+                echo "<option value=$row[job_id]>$rowVal</option>";
+            }
+            ?>
+        </select>
+
+<!--    --><?php
+//    if(isset($_POST["submit"]))
+//    {
+//        $job_var=$_POST["job_var"];
+//        echo '</br>' . " Selected Value is : " . $job_var;
+//    }
+//    ?>
+    <br><br>
+    <button type="submit" name="submit" >Submit</button>
     </form>
+
 
 </div>
 </body>

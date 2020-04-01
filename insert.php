@@ -1,7 +1,7 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "test");
+$link = mysqli_connect("localhost", "root", "admin", "hr_schema");
  
 // Check connection
 if($link === false){
@@ -15,11 +15,12 @@ $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $phone_number = mysqli_real_escape_string($link, $_REQUEST['phone_number']);
 $hire_date = mysqli_real_escape_string($link, $_REQUEST['hire_date']);
 $salary = mysqli_real_escape_string($link, $_REQUEST['salary']);
+$job_id = mysqli_real_escape_string($link, $_REQUEST['job_id']);
 
- 
+
 // Attempt insert query execution
-$sql = "INSERT INTO hr_employees (first_name, last_name, email, phone_number, hire_date, salary)
- VALUES ('$first_name', '$last_name', '$email', '$phone_number' , '$hire_date' , '$salary')";
+$sql = "INSERT INTO hr_employees (first_name, last_name, email, phone_number, hire_date, salary, job_id)
+ VALUES ('$first_name', '$last_name', '$email', '$phone_number' , '$hire_date' , '$salary',  '$job_id')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
