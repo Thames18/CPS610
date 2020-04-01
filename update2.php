@@ -62,18 +62,18 @@
     }
     ?>
 
-    <?php
+      <?php
     try {
         require 'mysql_connect.php';
         $query = "SELECT * FROM hr_employees";
         //first pass just gets the column names
-        print "<table>";
+        print "<table>&nbsp;";
         $result = $connection->query($query);
         //return only the first row (we only need field names)
         $row = $result->fetch_assoc();
-        print "<tr>";
+        print "&nbsp;<tr>";
         foreach ($row as $field => $value){
-            print " <th>$field</th>";
+            print " <th>&nbsp;&nbsp;$field</th>";
         } // end foreach
         print "</tr>";
         //second query gets the data
@@ -82,17 +82,18 @@
         foreach($data as $row){
             print " <tr>";
             foreach ($row as $name=>$value){
-                print " <td>$value</td>";
+                print " <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$value&nbsp;</td>";
             } // end field loop
             print " </tr>";
         } // end record loop
-        print "</table>";
+        print "</table>&nbsp;";
         mysqli_close($connection);
     } catch(mysqli_sql_exception $e) {
         echo 'ERROR: ' . $e->getMessage();
     }
     ?>
-
+<br>
+    
     <form method="post" action="">
         <table width="700" align="left" border="0" cellspacing="1" cellpadding="2">
             <tr>
