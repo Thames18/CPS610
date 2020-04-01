@@ -25,10 +25,10 @@ $sql = "INSERT INTO hr_employees (first_name, last_name, email, phone_number, hi
  VALUES ('$first_name', '$last_name', '$email', '$phone_number' , '$hire_date' , '$salary',  '$job_id',  '$manager_id',  '$department_id')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
+    mysqli_commit($link);
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
- 
 // Close connection
 mysqli_close($link);
 ?>
