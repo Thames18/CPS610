@@ -30,7 +30,7 @@
     <div class="w3-container w3-red w3-card-2">
         <p>Departments Main Menu</p>
     </div>
-    <a href="search.php" class="w3-bar-item w3-button">Verify Salary Range</a>
+    <a href="update.php" class="w3-bar-item w3-button">Verify Salary Range</a>
 </div>
 
 <div class="w3-container w3-card-2" style="margin-left:26%">
