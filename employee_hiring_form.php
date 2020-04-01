@@ -120,6 +120,8 @@
 //    ?>
     <br><br>
     <button type="submit" name="submit" >Submit</button>
+      <input type="submit" name="submit" value="Hire">
+   <input type="reset" onlclick="myFunction" value="Cancel">
     </form>
 
 
