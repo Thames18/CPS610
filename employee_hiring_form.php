@@ -62,7 +62,7 @@
         <label>
             <input class="w3-input w3-border w3-round" type="text" name="email" id="email">
         </label>
-        <br><br>
+        <br>
         <label>Phone</label>
         <label>
             <input class="w3-input w3-border w3-round" type="text" name="phone_number" id="phone_number">
