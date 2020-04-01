@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:20%">
+    <h3 class="w3-bar-item w3-black">
+        <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
+    </h3>
+
+    <!-- Task 1 Related Activities-->
+    <div class="w3-blue w3-card-2 w3-container">
+        <p>Employee Main Menu</p>
+    </div>
+    <a href="employee_hiring_form.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
+    <a href="update2.php" class="w3-bar-item w3-button">Update Employee Records</a>
+
+    <!-- Task 2 Related Activities-->
+    <!--TODO: link buttons to appropriate files-->
+    <div class="w3-container w3-green w3-card-2">
+        <p>Jobs Main Menu</p>
+    </div>
+    <a href="****.php" class="w3-bar-item w3-button">Identify Job Description</a>
+    <a href="****.php" class="w3-bar-item w3-button">Change Job Description</a>
+    <a href="****.php" class="w3-bar-item w3-button">Create New Job</a>
+
+    <!-- Task 3 Related Activities-->
+    <!--TODO: link buttons to appropriate files-->
+    <div class="w3-container w3-red w3-card-2">
+        <p>Departments Main Menu</p>
+    </div>
+    <a href="****.php" class="w3-bar-item w3-button">Verify Salary Range</a>
+
+</div>
+
+<div class="w3-container w3-card-2" style="margin-left:20%">
+    <div class="w3-container w3-card-2 w3-teal">
+        <h1>Update an Employee Record </h1>
+    </div>
+
+    <?php
+    if(isset($_POST['update2'])) {
+        require 'mysql_connect.php';
+
+        $employee_id = mysqli_real_escape_string($connection, $_POST['employee_id']);
+        $salary = mysqli_real_escape_string($connection,$_POST['salary']);
+        $phone_number = mysqli_real_escape_string($connection,$_POST['phone_number']);
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+
+        if (($employee_id != "") && ($salary != "") && ($phone_number != "") && ($email != "")) {
+            $sql = "UPDATE hr_employees SET salary = '$salary', phone_number = '$phone_number',
+                    email = '$email' WHERE employee_id = '$employee_id'";
+            $return_value = mysqli_query($connection, $sql);
+            if (!$return_value) {
+                die('Could not update data: ' . mysqli_error($connection));
+            }
+            echo "Updated data successfully\n";
+        } else{
+            die('Please enter values for all fields.');
+        }
+        mysqli_close($connection);
+    }
+    ?>
+
+    <?php
+    try {
+        require 'mysql_connect.php';
+        $query = "SELECT * FROM hr_employees";
+        //first pass just gets the column names
+        print "<table>";
+        $result = $connection->query($query);
+        //return only the first row (we only need field names)
+        $row = $result->fetch_assoc();
+        print "<tr>";
+        foreach ($row as $field => $value){
+            print " <th>$field</th>";
+        } // end foreach
+        print "</tr>";
+        //second query gets the data
+        $data = $connection->query($query);
+        $data->fetch_assoc();
+        foreach($data as $row){
+            print " <tr>";
+            foreach ($row as $name=>$value){
+                print " <td>$value</td>";
+            } // end field loop
+            print " </tr>";
+        } // end record loop
+        print "</table>";
+        mysqli_close($connection);
+    } catch(mysqli_sql_exception $e) {
+        echo 'ERROR: ' . $e->getMessage();
+    }
+    ?>
+
+    <form method="post" action="">
+        <table width="700" align="left" border="0" cellspacing="1" cellpadding="2">
+            <tr>
+                <th width="220", align="right">Where Employee ID =</th>
+                <td><input name="employee_id" type="text" id="employee_id"></td>
+            </tr>
+            <tr>
+                <th align="right">Update</th>
+            </tr>
+            <tr>
+                <th align="right">Salary =</th>
+                <td><input name="salary" type="text" id="salary"></td>
+            </tr>
+            <tr>
+                <th align="right">Phone Number =</th>
+                <td><input name="phone_number" type="text" id="phone_number"></td>
+            </tr>
+            <tr>
+                <th align="right">Email =</th>
+                <td><input name="email" type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td width="100"> </td>
+                <td>
+                    <input name="update2" type="submit" id="update2" value="Update">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
