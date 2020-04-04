@@ -13,7 +13,7 @@
         <p>Employee Main Menu</p>
     </div>
     <a href="employee_hiring_form.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
-    <a href="update.php" class="w3-bar-item w3-button">Update Employee Records</a>
+    <a href="update2.php" class="w3-bar-item w3-button">Update Employee Records</a>
 
     <!-- Task 2 Related Activities-->
     <!--TODO: link buttons to appropriate files-->
