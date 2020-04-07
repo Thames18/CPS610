@@ -103,9 +103,6 @@
                 <td><input name="job_id" type="text" id="job_id"></td>
             </tr>
             <tr>
-                <th align="right">Update</th>
-            </tr>
-            <tr>
                 <th align="right">job title =</th>
                 <td><input name="job_title" type="text" id="job_title"></td>
             </tr>
