@@ -220,3 +220,4 @@ INSERT INTO hr_dependents(dependent_id,first_name,last_name,relationship,employe
 INSERT INTO hr_dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (29,'Alec','Partners','Child',146);
 INSERT INTO hr_dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (30,'Sandra','Taylor','Child',176);
 
+COMMIT;
