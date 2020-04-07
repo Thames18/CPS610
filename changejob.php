@@ -13,7 +13,7 @@
         <p>Employee Main Menu</p>
     </div>
     <a href="employee_hiring_form.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
-    <a href="update2.php" class="w3-bar-item w3-button">Update Employee Records</a>
+    <a href="update.php" class="w3-bar-item w3-button">Update Employee Records</a>
 
     <!-- Task 2 Related Activities-->
     <!--TODO: link buttons to appropriate files-->
@@ -33,20 +33,6 @@
 
 </div>
 
-  // <?php
-           
-		   // require "mysql_connect.php";
-            // $sql = "CREATE OR REPLACE FUNCTION get_job (p_jobid IN jobs.job_id%type)
-// RETURN jobs.job_title%type IS
-// v_title jobs.job_title%type;
-// BEGIN
-// SELECT job_title%typeINTO v_title
-// FROM jobs
-// WHERE job_id = p_jobid;
-// RETURN v_title;
-// END get_job;"
-	
-// ?>
 
 <div class="w3-container w3-card-2" style="margin-left:20%">
     <div class="w3-container w3-card-2 w3-teal">
@@ -59,18 +45,24 @@
 
         $job_id = mysqli_real_escape_string($connection, $_POST['job_id']);
         $job_title = mysqli_real_escape_string($connection,$_POST['job_title']);
+	    $min_salary = mysqli_real_escape_string($connection,$_POST['min_salary']);
+        $max_salary = mysqli_real_escape_string($connection,$_POST['max_salary']);
 
-
-        if (($job_id != "") && ($job_title != "")) {
-            $sql = "SELECT job_id ,job_title from hr_jobs";
+		if (($job_id != "") && ($job_title != "") && ($min_salary != "") && ($max_salary != "")) {
+            $sql = "UPDATE hr_jobs SET job_title = '$job_title', min_salary = '$min_salary',
+                    max_salary = '$max_salary' WHERE job_id = '$job_id'";
             $return_value = mysqli_query($connection, $sql);
             if (!$return_value) {
                 die('Could not update data: ' . mysqli_error($connection));
+            }
+            echo "Updated data successfully\n";
+        } else{
+            die('Please enter values for all fields.');
         }
-		}
         mysqli_close($connection);
     }
     ?>
+
 
  <?php
     try {
@@ -104,6 +96,35 @@
     ?>
 <br>
 
+    <form method="post" action="">
+        <table width="700" align="left" border="0" cellspacing="1" cellpadding="2">
+            <tr>
+                <th width="220", align="right">Where job ID =</th>
+                <td><input name="job_id" type="text" id="job_id"></td>
+            </tr>
+            <tr>
+                <th align="right">Update</th>
+            </tr>
+            <tr>
+                <th align="right">job title =</th>
+                <td><input name="job_title" type="text" id="job_title"></td>
+            </tr>
+            <tr>
+                <th align="right">min salary =</th>
+                <td><input name="min_salary" type="text" id="min_salary"></td>
+            </tr>
+            <tr>
+                <th align="right">max salary =</th>
+                <td><input name="max_salary" type="text" id="max_salary"></td>
+            </tr>
+            <tr>
+                <td width="100"> </td>
+                <td>
+                    <input name="getjob" type="submit" id="getjob" value="change job">
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
 </body>
 </html>
