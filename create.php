@@ -14,7 +14,7 @@
         }
     </script>
 
-    <h3 class="w3-bar-item w3-black">
+       <h3 class="w3-bar-item w3-black">
         <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
     </h3>
 
@@ -23,7 +23,7 @@
         <p>Employee Main Menu</p>
     </div>
     <a href="employee_hiring_form.php" class="w3-bar-item w3-button">&emsp;Employee Hiring Form</a>
-    <a href="update.php" class="w3-bar-item w3-button">&emsp;Update Employee Records</a>
+    <a href="update2.php" class="w3-bar-item w3-button">&emsp;Update Employee Records</a>
 
     <!-- Task 2 Related Activities-->
     <!--TODO: link buttons to appropriate files-->
