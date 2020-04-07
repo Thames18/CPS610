@@ -4,32 +4,35 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 <div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:20%">
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+
+        function myFunction() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+
     <h3 class="w3-bar-item w3-black">
-        <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
+        <a href="index.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
     </h3>
 
     <!-- Task 1 Related Activities-->
     <div class="w3-blue w3-card-2 w3-container">
         <p>Employee Main Menu</p>
     </div>
-    <a href="employee_hiring_form.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
-    <a href="update2.php" class="w3-bar-item w3-button">Update Employee Records</a>
+    <a href="employee_hiring_form.php" class="w3-bar-item w3-button">&emsp;Employee Hiring Form</a>
+    <a href="update2.php" class="w3-bar-item w3-button">&emsp;Update Employee Records</a>
 
     <!-- Task 2 Related Activities-->
     <!--TODO: link buttons to appropriate files-->
     <div class="w3-container w3-green w3-card-2">
         <p>Jobs Main Menu</p>
     </div>
-    <a href="****.php" class="w3-bar-item w3-button">Identify Job Description</a>
-    <a href="****.php" class="w3-bar-item w3-button">Change Job Description</a>
-    <a href="****.php" class="w3-bar-item w3-button">Create New Job</a>
-
-    <!-- Task 3 Related Activities-->
-    <!--TODO: link buttons to appropriate files-->
-    <div class="w3-container w3-red w3-card-2">
-        <p>Departments Main Menu</p>
-    </div>
-    <a href="****.php" class="w3-bar-item w3-button">Verify Salary Range</a>
+    <a href="getjob.php" class="w3-bar-item w3-button">&emsp;Identify Job Description</a>
+    <a href="changejob.php" class="w3-bar-item w3-button">&emsp;Change Job Description</a>
+    <a href="create.php" class="w3-bar-item w3-button">&emsp;Create New Job</a>
 
 </div>
 
@@ -47,14 +50,27 @@
         $phone_number = mysqli_real_escape_string($connection,$_POST['phone_number']);
         $email = mysqli_real_escape_string($connection,$_POST['email']);
 
+        // Salary check
+        $query = "SELECT min_salary, max_salary from hr_jobs where job_id = (select job_id from hr_employees where employee_id=$employee_id)";
+        $answer = mysqli_query($connection, $query);
+        $result = mysqli_fetch_assoc($answer);
+        $min_salary = $result['min_salary'];
+        $max_salary = $result['max_salary'];
+//        echo $min_salary;
+//        echo $max_salary;
+
         if (($employee_id != "") && ($salary != "") && ($phone_number != "") && ($email != "")) {
-            $sql = "UPDATE hr_employees SET salary = '$salary', phone_number = '$phone_number',
-                    email = '$email' WHERE employee_id = '$employee_id'";
-            $return_value = mysqli_query($connection, $sql);
-            if (!$return_value) {
-                die('Could not update data: ' . mysqli_error($connection));
+            if (!($salary < $min_salary or $max_salary < $salary)) {
+                $sql = "UPDATE hr_employees SET salary = '$salary', phone_number = '$phone_number',
+                        email = '$email' WHERE employee_id = '$employee_id'";
+                $return_value = mysqli_query($connection, $sql);
+                if (!$return_value) {
+                    die('Could not update data: ' . mysqli_error($connection));
+                }
+                echo "Updated data successfully\n";
+            } else{
+                die("ERROR: Salary is out of range. ");
             }
-            echo "Updated data successfully\n";
         } else{
             die('Please enter values for all fields.');
         }

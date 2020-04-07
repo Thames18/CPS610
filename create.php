@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-<div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:25%">
+<div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:20%">
     <script>
         $( function() {
             $( "#datepicker" ).datepicker();
@@ -14,8 +14,8 @@
         }
     </script>
 
-       <h3 class="w3-bar-item w3-black">
-        <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
+    <h3 class="w3-bar-item w3-black">
+        <a href="index.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
     </h3>
 
     <!-- Task 1 Related Activities-->
@@ -34,15 +34,9 @@
     <a href="changejob.php" class="w3-bar-item w3-button">&emsp;Change Job Description</a>
     <a href="create.php" class="w3-bar-item w3-button">&emsp;Create New Job</a>
 
-    <!-- Task 3 Related Activities-->
-    <!--TODO: link buttons to appropriate files-->
-    <div class="w3-container w3-red w3-card-2">
-        <p>Departments Main Menu</p>
-    </div>
-    <a href="****.php" class="w3-bar-item w3-button">&emsp;Verify Salary Range</a>
 </div>
 
-<div class="w3-container w3-card-2" style="margin-left:25%">
+<div class="w3-container w3-card-2" style="margin-left:20%">
     <div class="w3-container w3-card-2 w3-teal">
         <h1>Employee Hiring Form</h1>
     </div>

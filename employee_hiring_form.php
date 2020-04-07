@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-<div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:25%">
+<div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:20%">
     <script>
         $( function() {
             $( "#datepicker" ).datepicker();
@@ -15,7 +15,7 @@
     </script>
 
     <h3 class="w3-bar-item w3-black">
-        <a href="home.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
+        <a href="index.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
     </h3>
 
     <!-- Task 1 Related Activities-->
@@ -34,15 +34,9 @@
     <a href="changejob.php" class="w3-bar-item w3-button">&emsp;Change Job Description</a>
     <a href="create.php" class="w3-bar-item w3-button">&emsp;Create New Job</a>
 
-    <!-- Task 3 Related Activities-->
-    <!--TODO: link buttons to appropriate files-->
-    <div class="w3-container w3-red w3-card-2">
-        <p>Departments Main Menu</p>
-    </div>
-    <a href="****.php" class="w3-bar-item w3-button">&emsp;Verify Salary Range</a>
 </div>
 
-<div class="w3-container w3-card-2" style="margin-left:25%">
+<div class="w3-container w3-card-2" style="margin-left:20%">
     <div class="w3-container w3-card-2 w3-teal">
         <h1>Employee Hiring Form</h1>
     </div>
@@ -74,34 +68,7 @@
             <label>
                 <input class="w3-input w3-border w3-round" type="text" name="salary" id="salary">
             </label>
-
             <br>
-
-    <!--		<select>-->
-    <!--			<option selected disabled>Manager: </option>-->
-    <!--			<option value="volvo">Employee_Id</option>-->
-    <!--			<option value="saab">First_Name</option>-->
-    <!--			<option value="opel">Last_Name</option>-->
-    <!--		</select>-->
-    <!--          <br><br>-->
-    <!---->
-    <!--		<select>-->
-    <!--		<option selected disabled>Job: </option>-->
-    <!--		  <option value="volvo">Job_id</option>-->
-    <!--		  <option value="saab">Job_Title</option>-->
-    <!--		  <option value="saab">min_salary</option>-->
-    <!--		  <option value="saab">max_salary</option>-->
-    <!---->
-    <!--		</select>-->
-    <!--        <br><br>-->
-    <!---->
-    <!--		<select>-->
-    <!--		<option selected disabled>Department:</option>-->
-    <!--		  <option value="volvo">Department_Id</option>-->
-    <!--		  <option value="saab">Department_Name</option>-->
-    <!--		  <option value="saab">location_id</option>-->
-    <!--		</select>-->
-
 
         <!-- Dropdown/table display for Job Table -->
             <label for='job_id'>Select Job Title:</label>
@@ -163,7 +130,6 @@
         <br><br>
 
     </form>
-
 
 </div>
 </body>
