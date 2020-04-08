@@ -14,9 +14,6 @@ $job_title = mysqli_real_escape_string($link, $_REQUEST['job_title']);
 $min_salary = mysqli_real_escape_string($link, $_REQUEST['min_salary']);
 $max_salary = mysqli_real_escape_string($link, $_REQUEST['max_salary']);
 
-
-
-
 // Attempt insert query execution
 $sql = "INSERT INTO hr_jobs (job_id, job_title, min_salary, max_salary)
  VALUES ('$job_id', '$job_title', '$min_salary', '$max_salary' )";
@@ -26,6 +23,7 @@ if(mysqli_query($link, $sql)){
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
+mysqli_commit($link);
 // Close connection
 mysqli_close($link);
 ?>
