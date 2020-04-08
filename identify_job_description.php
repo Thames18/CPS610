@@ -11,34 +11,38 @@
   color: white;
 }
 </style>
-<div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:25%">
-    <h3 class="w3-bar-item w3-black">
-        <a href="index.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
-    </h3>
+        <div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:20%">
+            <script>
+                $( function() {
+                    $( "#datepicker" ).datepicker();
+                } );
 
-    <!-- Task 1 Related Links-->
-    <div class="w3-blue w3-card-2 w3-container">
-        <p>Employee Main Menu</p>
-    </div>
-    <a href="employee_hiring_form.php" class="w3-bar-item w3-button">Employee Hiring Form</a>
-    <a href="update2.php" class="w3-bar-item w3-button">Update Employee Records</a>
+                function myFunction() {
+                    document.getElementById("myForm").reset();
+                }
+            </script>
 
-    <!-- Task 2 Related Links-->
-    <!--TODO: link buttons to appropriate files-->
-    <div class="w3-container w3-green w3-card-2">
-        <p>Jobs Main Menu</p>
-    </div>
-    <a href="identify_job_description.php" class="w3-bar-item w3-button active">Identify Job Description</a>
-    <a href="change_job_description.php" class="w3-bar-item w3-button">Change Job Description</a>
-    <a href="create_new_job.php" class="w3-bar-item w3-button">Create New Job</a>
+            <h3 class="w3-bar-item w3-black">
+                <a href="index.php" class="w3-bar-item w3-black">CCPS 610 Assignment</a>
+            </h3>
 
-    <!-- Task 3 Related Links-->
-    <div class="w3-container w3-red w3-card-2">
-        <p>Departments Main Menu</p>
-    </div>
-    <a href="verify_salary_range.php" class="w3-bar-item w3-button">Verify Salary Range</a>
+            <!-- Task 1 Related Activities-->
+            <div class="w3-blue w3-card-2 w3-container">
+                <p>Employee Main Menu</p>
+            </div>
+            <a href="employee_hiring_form.php" class="w3-bar-item w3-button">&emsp;Employee Hiring Form</a>
+            <a href="update2.php" class="w3-bar-item w3-button">&emsp;Update Employee Records</a>
 
-</div>
+            <!-- Task 2 Related Activities-->
+            <!--TODO: link buttons to appropriate files-->
+            <div class="w3-container w3-green w3-card-2">
+                <p>Jobs Main Menu</p>
+            </div>
+            <a href="identify_job_description.php" class="w3-bar-item w3-button">&emsp;Identify Job Description</a>
+            <a href="changejob.php" class="w3-bar-item w3-button">&emsp;Change Job Description</a>
+            <a href="create.php" class="w3-bar-item w3-button">&emsp;Create New Job</a>
+
+        </div>
 
 <form action="identify_job_description_action.php" id="add_employee" method="post">
     <div class="w3-container w3-card-2" style="margin-left:25%">

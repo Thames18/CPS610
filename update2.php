@@ -38,7 +38,7 @@
     <div class="w3-container w3-green w3-card-2">
         <p>Jobs Main Menu</p>
     </div>
-    <a href="getjob.php" class="w3-bar-item w3-button">&emsp;Identify Job Description</a>
+    <a href="identify_job_description.php" class="w3-bar-item w3-button">&emsp;Identify Job Description</a>
     <a href="changejob.php" class="w3-bar-item w3-button">&emsp;Change Job Description</a>
     <a href="create.php" class="w3-bar-item w3-button">&emsp;Create New Job</a>
 
