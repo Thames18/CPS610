@@ -55,15 +55,11 @@
             <label>
                 <input class="w3-input w3-border w3-round" type="text" name="min_salary" id="min_salary">
             </label>
-            <br>
             <label>Max Salary</label>
             <label>
                 <input class="w3-input w3-border w3-round" type="text" name="max_salary" id="max_salary">
             </label>
-            
             <br>
-
-        <br><br>
 	  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="submit" name="submit" value="Create Job"> 	
 
         <br><br>
