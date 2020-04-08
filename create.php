@@ -4,7 +4,14 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 <div class="w3-sidebar w3-light-grey w3-bar-block w3-card-2" style="width:20%">
-    <script>
+        <style>
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #D89327;
+  color: white;
+}
+</style>
+	<script>
         $( function() {
             $( "#datepicker" ).datepicker();
         } );
@@ -32,7 +39,7 @@
     </div>
     <a href="getjob.php" class="w3-bar-item w3-button">&emsp;Identify Job Description</a>
     <a href="changejob.php" class="w3-bar-item w3-button">&emsp;Change Job Description</a>
-    <a href="create.php" class="w3-bar-item w3-button">&emsp;Create New Job</a>
+    <a href="create.php" class="w3-bar-item w3-button active">&emsp;Create New Job</a>
 
 </div>
 
