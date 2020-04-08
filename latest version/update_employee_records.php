@@ -82,6 +82,7 @@
         } else{
             die('Please enter values for all fields.');
         }
+        mysqli_commit($connection);
         mysqli_close($connection);
     }
     ?>
